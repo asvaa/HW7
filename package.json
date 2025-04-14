@@ -2,7 +2,7 @@
   "name": "hws2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/asvaa/asvaa-HW7.git",
+  "homepage": "https://asvaa.github.io/asvaa-HW7",
   "dependencies": {
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
