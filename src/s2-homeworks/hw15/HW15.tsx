@@ -5,6 +5,7 @@ import s from './HW15.module.css'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import axios from 'axios'
 
 /*
 * 1 - дописать SuperPagination
