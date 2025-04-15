@@ -2,7 +2,7 @@
   "name": "hws2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.io/asvaa/dz",
+  "homepage": "https://asvaa.github.io/dz",
   "dependencies": {
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
@@ -55,7 +55,7 @@
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "This project was bootstrapped with [Create React App](https://github.io/facebook/create-react-app).",
   "main": "index.js",
   "keywords": [],
   "author": "",
