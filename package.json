@@ -12,7 +12,6 @@
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "27.5.2",
     "@types/node": "16.11.56",
-    "@types/react-dom": "^19.1.2",
     "@types/uuid": "8.3.4",
     "axios": "0.27.2",
     "gh-pages": "^6.3.0",
@@ -32,7 +31,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,7 +52,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^19.1.1"
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
