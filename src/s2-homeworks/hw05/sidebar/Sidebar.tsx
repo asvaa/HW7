@@ -21,30 +21,31 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
           <img src={closeIcon} alt="close sidebar" />
         </button>
         <nav className={s.nav}>
-          <NavLink
-            to={PATH.PRE_JUNIOR}
-            onClick={handleClose}
-            className={({ isActive }) => (isActive ? s.active : "")}
-            id="hw5-junior-link"
-          >
-            Pre-junior
-          </NavLink>
-          <NavLink
-            to={PATH.JUNIOR}
-            onClick={handleClose}
-            className={({ isActive }) => (isActive ? s.active : "")}
-             id="hw5-junior-link"
-          >
-            Junior
-          </NavLink>
-          <NavLink
-            to={PATH.JUNIOR_PLUS}
-            onClick={handleClose}
-            className={({ isActive }) => (isActive ? s.active : "")}
-             id="hw5-junior-link"
-          >
-            Junior Plus
-          </NavLink>
+        <NavLink
+  to={PATH.PRE_JUNIOR}
+  onClick={handleClose}
+  className={({ isActive }) => (isActive ? s.active : "")}
+>
+  Pre-junior
+</NavLink>
+
+<NavLink
+  to={PATH.JUNIOR}
+  onClick={handleClose}
+  className={({ isActive }) => (isActive ? s.active : "")}
+  id="hw5-junior-link" 
+>
+  Junior
+</NavLink>
+
+<NavLink
+  to={PATH.JUNIOR_PLUS}
+  onClick={handleClose}
+  className={({ isActive }) => (isActive ? s.active : "")}
+>
+  Junior Plus
+</NavLink>
+
         </nav>
       </aside>
     </>
