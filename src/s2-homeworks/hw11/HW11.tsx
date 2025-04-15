@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import s from './HW11.module.css'
 import s2 from '../../s1-main/App.module.css'
-import { restoreState } from '../hw06/localStorage/localStorage'
+
 import SuperRange from './common/c7-SuperRange/SuperRange'
+import { restoreState } from '../hw06 copy/localStorage/localStorage'
 
 /*
 * 1 - передать значения в оба слайдера
