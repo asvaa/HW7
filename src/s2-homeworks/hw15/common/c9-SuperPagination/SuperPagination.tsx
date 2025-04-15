@@ -44,7 +44,7 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
                 показать
             </span>
 
-            <SuperSelect
+            {/* <SuperSelect
                 id={id + '-pagination-select'}
                 value={itemsCountForPage}
                 options={[
@@ -53,7 +53,7 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
                     {id: 10, value: 10},
                 ]}
                 onChange={onChangeSelect}
-            />
+            /> */}
 
             <span className={s.text2}>
                 строк в таблице

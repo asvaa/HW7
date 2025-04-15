@@ -1,60 +1,32 @@
-import React, {
-    SelectHTMLAttributes,
-    DetailedHTMLProps,
-    ChangeEvent,
-} from 'react'
-import s from './SuperSelect.module.css'
+import React from "react";
+import s from "./SuperSelect.module.css";
 
 type OptionType = {
-    id: number
-    value: string
-}
+  id: number;
+  value: string;
+};
 
-type DefaultSelectPropsType = DetailedHTMLProps<
-    SelectHTMLAttributes<HTMLSelectElement>,
-    HTMLSelectElement
->
+type SuperSelectProps = {
+  id?: string;
+  options: OptionType[];
+  value: number;
+  onChangeOption: (id: number) => void;
+};
 
-type SuperSelectPropsType = DefaultSelectPropsType & {
-    options: OptionType[]
-    value: number
-    onChangeOption: (value: number) => void
-}
+const SuperSelect: React.FC<SuperSelectProps> = ({ id, options, value, onChangeOption }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    onChangeOption(Number(e.target.value));
+  };
 
-const SuperSelect: React.FC<SuperSelectPropsType> = ({
-    options,
-    className,
-    onChange,
-    onChangeOption,
-    ...restProps
-}) => {
-    const mappedOptions = options.map((o) => (
-        <option
-            id={'hw7-option-' + o.id}
-            className={s.option}
-            key={o.id}
-            value={o.id}
-        >
-            {o.value}
+  return (
+    <select id={id} className={s.select} value={value} onChange={handleChange}>
+      {options.map((opt) => (
+        <option key={opt.id} value={opt.id} className={s.option}>
+          {opt.value}
         </option>
-    ))
+      ))}
+    </select>
+  );
+};
 
-    const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-        onChangeOption(Number(e.currentTarget.value))
-        onChange?.(e) 
-    }
-
-    const finalSelectClassName = `${s.select}${className ? ' ' + className : ''}`
-
-    return (
-        <select
-            className={finalSelectClassName}
-            onChange={onChangeCallback}
-            {...restProps}
-        >
-            {mappedOptions}
-        </select>
-    )
-}
-
-export default SuperSelect
+export default SuperSelect;
