@@ -1,61 +1,63 @@
-/* Стили для бокового меню */
+/* Основной контейнер сайдбара */
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* Скрыто слева */
+    left: 0;
+    transform: translateX(-100%); /* Спрятан влево */
     width: 250px;
     height: 100%;
     background-color: #282c34;
     color: white;
-    transition: transform 0.3s ease; /* Плавная анимация при открытии */
+    transition: transform 0.3s ease;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Тень справа от меню */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Над затемнением */
 }
 
-/* Когда меню открыто, оно сдвигается вправо */
+/* Когда меню открыто */
 .sidebar.open {
-    transform: translateX(250px); /* Меню будет видно */
+    transform: translateX(0); /* Видим */
 }
 
-/* Задний полупрозрачный фон, который появляется при открытом меню */
+/* Полупрозрачный затемняющий фон */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный */
-    z-index: 1; /* Фон находится ниже меню */
+    background-color: rgba(0, 0, 0, 0.5); /* затемнение */
+    z-index: 1; /* Ниже сайдбара */
 }
 
-/* Стили для навигационного меню внутри сайдбара */
+/* Контейнер ссылок */
 .nav {
     display: flex;
     flex-direction: column;
-    margin-top: 20px; /* Отступ сверху для навигации */
+    margin-top: 20px;
 }
 
-/* Стили для ссылок внутри навигации */
+/* Ссылки навигации */
 .nav a {
     color: white;
     text-decoration: none;
-    margin: 10px 0; /* Отступы между ссылками */
+    margin: 10px 0;
     font-size: 18px;
-    transition: color 0.3s; /* Плавный переход для цвета */
+    transition: color 0.3s;
 }
 
-/* Эффект при наведении на ссылку */
+/* При наведении */
 .nav a:hover {
-    color: #f1c40f; /* Золотой цвет при наведении */
+    color: #f1c40f;
 }
 
-/* Активный класс для активных ссылок */
+/* Активная ссылка */
 .nav a.active {
-    color: #f1c40f; /* Золотой цвет для активной ссылки */
-    font-weight: bold; /* Жирный шрифт для активной ссылки */
+    color: #f1c40f;
+    font-weight: bold;
 }
 
-/* Стили для кнопки закрытия меню */
+/* Кнопка закрытия меню */
 .close {
     background: none;
     border: none;
@@ -64,12 +66,12 @@
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
-    padding: 10px; /* Отступы вокруг кнопки */
+    padding: 10px;
 }
 
-/* Стили для изображения кнопки закрытия */
+/* Иконка закрытия */
 .close img {
-    width: 20px; /* Размер изображения */
+    width: 20px;
     height: 20px;
-    object-fit: contain; /* Сохранение пропорций изображения */
+    object-fit: contain;
 }
