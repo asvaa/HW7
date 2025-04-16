@@ -32,7 +32,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
   id,
   name,
   className,
-  options = [], // Добавляем дефолтное значение
+  options = [],
   value,
   onChangeOption,
   spanProps,
@@ -42,8 +42,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     const selectedOption = options.find(
       (o) => o.id.toString() === e.target.value
     );
-    if (selectedOption && onChangeOption) {
-      onChangeOption(selectedOption);
+    if (selectedOption) {
+      onChangeOption?.(selectedOption); // Упрощаем вызов с optional chaining
     }
   };
 
@@ -51,9 +51,11 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
   const spanClassName = `${s.span} ${spanProps?.className || ""}`;
 
   const mappedOptions = options.map((o) => (
-    <label key={name + "-" + o.id} className={s.label}>
+    <label key={o.id} className={s.label}>
+      {" "}
+      {/* Используем id вместо name */}
       <input
-        id={id + "-input-" + o.id}
+        id={`${id}-input-${o.id}`}
         className={finalRadioClassName}
         type="radio"
         name={name}
@@ -62,7 +64,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
         onChange={onChangeCallback}
         {...restProps}
       />
-      <span id={id + "-span-" + o.id} {...spanProps} className={spanClassName}>
+      <span id={`${id}-span-${o.id}`} {...spanProps} className={spanClassName}>
         {o.value}
       </span>
     </label>
