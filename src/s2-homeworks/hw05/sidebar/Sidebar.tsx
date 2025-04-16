@@ -1,3 +1,4 @@
+// Sidebar.tsx
 import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Sidebar.module.css";
@@ -14,10 +15,20 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
 
   return (
     <>
-      {open && <div className={s.background} onClick={handleClose} />}
+      {open && (
+        <div
+          className={s.background}
+          onClick={handleClose}
+          data-testid="sidebar-background"
+        />
+      )}
 
       <aside className={sidebarClass}>
-        <button className={s.close} onClick={handleClose}>
+        <button
+          className={s.close}
+          onClick={handleClose}
+          data-testid="close-sidebar-button"
+        >
           <img src={closeIcon} alt="close sidebar" />
         </button>
         <nav className={s.nav}>
@@ -25,16 +36,16 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
             to={PATH.PRE_JUNIOR}
             onClick={handleClose}
             className={({ isActive }) => (isActive ? s.active : "")}
+            data-testid="pre-junior-link"
           >
             Pre-junior
           </NavLink>
 
           <NavLink
             to={PATH.JUNIOR}
-             id="hw5-junior-link"
-            data-testid="hw5-junior-link"
             onClick={handleClose}
             className={({ isActive }) => (isActive ? s.active : "")}
+            data-testid="junior-link"
           >
             Junior
           </NavLink>
@@ -43,6 +54,7 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
             to={PATH.JUNIOR_PLUS}
             onClick={handleClose}
             className={({ isActive }) => (isActive ? s.active : "")}
+            data-testid="junior-plus-link"
           >
             Junior Plus
           </NavLink>
