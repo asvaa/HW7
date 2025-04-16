@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/asvaa/hw7.git/static/css/main.aa072580.css",
+    "main.js": "/asvaa/hw7.git/static/js/main.35fc1a1e.js",
+    "static/js/787.67f55d8d.chunk.js": "/asvaa/hw7.git/static/js/787.67f55d8d.chunk.js",
+    "static/media/editIcon.svg": "/asvaa/hw7.git/static/media/editIcon.0a0cefd2190b593b4f76bb1a5afe0c1f.svg",
+    "index.html": "/asvaa/hw7.git/index.html",
+    "main.aa072580.css.map": "/asvaa/hw7.git/static/css/main.aa072580.css.map",
+    "main.35fc1a1e.js.map": "/asvaa/hw7.git/static/js/main.35fc1a1e.js.map",
+    "787.67f55d8d.chunk.js.map": "/asvaa/hw7.git/static/js/787.67f55d8d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa072580.css",
+    "static/js/main.35fc1a1e.js"
+  ]
+}
