@@ -32,16 +32,14 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
   id,
   name,
   className,
-  options,
+  options = [], // Добавляем дефолтное значение
   value,
-  onChange,
   onChangeOption,
   spanProps,
   ...restProps
 }) => {
   const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-    // ✅ приведение e.target.value к строке
-    const selectedOption = options?.find(
+    const selectedOption = options.find(
       (o) => o.id.toString() === e.target.value
     );
     if (selectedOption && onChangeOption) {
@@ -52,29 +50,23 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
   const finalRadioClassName = `${s.radio} ${className || ""}`;
   const spanClassName = `${s.span} ${spanProps?.className || ""}`;
 
-  const mappedOptions = options
-    ? options.map((o) => (
-        <label key={name + "-" + o.id} className={s.label}>
-          <input
-            id={id + "-input-" + o.id}
-            className={finalRadioClassName}
-            type="radio"
-            name={name}
-            value={o.id.toString()} // ✅ приведение value к строке
-            checked={value.toString() === o.id.toString()} // ✅ сравнение по строке
-            onChange={onChangeCallback}
-            {...restProps}
-          />
-          <span
-            id={id + "-span-" + o.id}
-            {...spanProps}
-            className={spanClassName}
-          >
-            {o.value}
-          </span>
-        </label>
-      ))
-    : [];
+  const mappedOptions = options.map((o) => (
+    <label key={name + "-" + o.id} className={s.label}>
+      <input
+        id={id + "-input-" + o.id}
+        className={finalRadioClassName}
+        type="radio"
+        name={name}
+        value={o.id.toString()}
+        checked={value.toString() === o.id.toString()}
+        onChange={onChangeCallback}
+        {...restProps}
+      />
+      <span id={id + "-span-" + o.id} {...spanProps} className={spanClassName}>
+        {o.value}
+      </span>
+    </label>
+  ));
 
   return <div className={s.options}>{mappedOptions}</div>;
 };

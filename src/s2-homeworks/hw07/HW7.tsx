@@ -16,10 +16,10 @@ const arr: OptionType[] = [
 ];
 
 const HW7 = () => {
-  const [value, setValue] = useState<number>(1);
+  const [value, setValue] = useState<string | number>(1);
 
   const onChangeOption = (option: OptionType) => {
-    setValue(option.id as number);
+    setValue(option.id);
   };
 
   return (

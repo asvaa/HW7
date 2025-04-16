@@ -1,8 +1,4 @@
-import React, {
-  SelectHTMLAttributes,
-  DetailedHTMLProps,
-  ChangeEvent,
-} from "react";
+import React, { SelectHTMLAttributes, DetailedHTMLProps, ChangeEvent } from "react";
 import s from "./SuperSelect.module.css";
 
 type OptionType = {
@@ -10,10 +6,7 @@ type OptionType = {
   value: string;
 };
 
-type DefaultSelectPropsType = DetailedHTMLProps<
-  SelectHTMLAttributes<HTMLSelectElement>,
-  HTMLSelectElement
->;
+type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
   options?: OptionType[];
@@ -21,33 +14,33 @@ type SuperSelectPropsType = DefaultSelectPropsType & {
 };
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
-  options,
+  options = [], // Задаем пустой массив по умолчанию, если options не передан
   className,
-  onChange,
   onChangeOption,
   ...restProps
 }) => {
-  const mappedOptions = options
-    ? options.map((o) => (
-        <option
-          id={"hw7-option-" + o.id}
-          className={s.option}
-          key={o.id}
-          value={o.id}
-        >
-          {o.value}
-        </option>
-      ))
-    : [];
+  const mappedOptions = options.map((o) => (
+    <option
+      id={"hw7-option-" + o.id}
+      className={s.option}
+      key={o.id}
+      value={o.id}
+    >
+      {o.value}
+    </option>
+  ));
 
   const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-    const selectedOption = options?.find((o) => o.id === e.target.value);
+    const selectedOption = options.find(
+      (o) => o.id === (typeof o.id === 'string' ? e.target.value : +e.target.value)
+    );
+
     if (selectedOption && onChangeOption) {
       onChangeOption(selectedOption);
     }
   };
 
-  const finalSelectClassName = `${s.select} ${className ? className : ""}`;
+  const finalSelectClassName = `${s.select} ${className || ""}`;
 
   return (
     <select
