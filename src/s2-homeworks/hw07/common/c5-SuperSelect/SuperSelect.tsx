@@ -2,7 +2,7 @@ import React, { SelectHTMLAttributes, DetailedHTMLProps, ChangeEvent } from "rea
 import s from "./SuperSelect.module.css";
 
 type OptionType = {
-  id: string | number;
+  id: number;
   value: string;
 };
 
