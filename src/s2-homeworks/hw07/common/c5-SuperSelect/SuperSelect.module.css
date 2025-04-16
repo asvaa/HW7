@@ -1,19 +1,39 @@
-.select {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #fff;
-    font-size: 16px;
-    color: #333;
-    outline: none;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+/* .select {
+  
 }
 
 .select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.6);
+
 }
 
 .option:hover {
-    background-color: #f0f0f0;
-}
+  
+} */
+.select {
+    width: 200px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .select:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+  }
+  
+  /* option:hover работает только в некоторых браузерах.
+     Альтернатива — использовать <ul><li> кастомный выпадающий список.
+     Но если хочешь оставить стандартный select, это максимум: */
+  .option:hover {
+    background-color: #f5f5f5;
+  }
+  
