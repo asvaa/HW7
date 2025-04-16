@@ -1,4 +1,3 @@
-// Sidebar.tsx
 import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Sidebar.module.css";
@@ -12,52 +11,44 @@ type PropsType = {
 
 export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
   const sidebarClass = s.sidebar + (open ? " " + s.open : "");
-
   return (
     <>
-      {open && (
-        <div
-          className={s.background}
-          onClick={handleClose}
-          data-testid="sidebar-background"
-        />
-      )}
+      {/* Затемнение справа от открытого меню */}
+      {open && <div className={s.background} onClick={handleClose} />}
 
       <aside className={sidebarClass}>
-        <button
-          className={s.close}
-          onClick={handleClose}
-          data-testid="close-sidebar-button"
-        >
-          <img src={closeIcon} alt="close sidebar" />
+        <button className={s.close} onClick={handleClose}>
+          <img src={closeIcon} alt="close sidebar" id={"hw5-menu-close"} />
         </button>
-        <nav className={s.nav}>
+
+        <nav id={"hw5-menu"} className={s.nav}>
           <NavLink
+            id={"hw5-pre-junior-link"}
             to={PATH.PRE_JUNIOR}
-            id="hw5-pre-junior-link" // ✅ добавлен id
             onClick={handleClose}
-            className={({ isActive }) => (isActive ? s.active : "")}
-            data-testid="pre-junior-link"
+            className={({ isActive }) =>
+              s.link + (isActive ? " " + s.active : "")
+            }
           >
             Pre-junior
           </NavLink>
-
           <NavLink
+            id={"hw5-junior-link"}
             to={PATH.JUNIOR}
-            id="hw5-junior-link" // ✅ нужный id для Cypress
             onClick={handleClose}
-            className={({ isActive }) => (isActive ? s.active : "")}
-            data-testid="junior-link"
+            className={({ isActive }) =>
+              s.link + (isActive ? " " + s.active : "")
+            }
           >
             Junior
           </NavLink>
-
           <NavLink
+            id={"hw5-junior-plus-link"}
             to={PATH.JUNIOR_PLUS}
-            id="hw5-junior-plus-link" // ✅ тоже можно добавить
             onClick={handleClose}
-            className={({ isActive }) => (isActive ? s.active : "")}
-            data-testid="junior-plus-link"
+            className={({ isActive }) =>
+              s.link + (isActive ? " " + s.active : "")
+            }
           >
             Junior Plus
           </NavLink>

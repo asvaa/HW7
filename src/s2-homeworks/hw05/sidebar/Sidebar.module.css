@@ -1,51 +1,75 @@
+/* Стили для бокового меню */
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 220px;
+    left: -250px; /* Скрыто слева */
+    width: 250px;
     height: 100%;
-    background-color: #1e1e2f;
+    background-color: #282c34;
     color: white;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Плавная анимация при открытии */
     padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Тень справа от меню */
 }
 
+/* Когда меню открыто, оно сдвигается вправо */
 .sidebar.open {
-    transform: translateX(0);
+    transform: translateX(250px); /* Меню будет видно */
 }
 
+/* Задний полупрозрачный фон, который появляется при открытом меню */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный */
+    z-index: 1; /* Фон находится ниже меню */
+}
+
+/* Стили для навигационного меню внутри сайдбара */
 .nav {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    margin-top: 20px; /* Отступ сверху для навигации */
 }
 
+/* Стили для ссылок внутри навигации */
 .nav a {
-    color: #bbb;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 8px 12px;
-    transition: 0.2s;
-}
-
-.nav a:hover {
-    background-color: #333;
     color: white;
+    text-decoration: none;
+    margin: 10px 0; /* Отступы между ссылками */
+    font-size: 18px;
+    transition: color 0.3s; /* Плавный переход для цвета */
 }
 
+/* Эффект при наведении на ссылку */
+.nav a:hover {
+    color: #f1c40f; /* Золотой цвет при наведении */
+}
+
+/* Активный класс для активных ссылок */
 .nav a.active {
-    color: #61dafb;
-    font-weight: bold;
+    color: #f1c40f; /* Золотой цвет для активной ссылки */
+    font-weight: bold; /* Жирный шрифт для активной ссылки */
 }
 
+/* Стили для кнопки закрытия меню */
 .close {
     background: none;
     border: none;
+    color: white;
+    font-size: 30px;
     cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px; /* Отступы вокруг кнопки */
 }
 
+/* Стили для изображения кнопки закрытия */
 .close img {
-    width: 24px;
-    height: 24px;
+    width: 20px; /* Размер изображения */
+    height: 20px;
+    object-fit: contain; /* Сохранение пропорций изображения */
 }
