@@ -2,7 +2,7 @@ import React, { ChangeEvent } from "react";
 import s from "./SuperRadio.module.css";
 
 type OptionType = {
-  id: string | number;
+  id: number;
   value: string;
 };
 
