@@ -24,7 +24,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
       id={"hw7-option-" + o.id}
       className={s.option}
       key={o.id}
-      value={o.id}
+      value={o.id} // value здесь соответствует id, для корректного выбора
     >
       {o.value}
     </option>
