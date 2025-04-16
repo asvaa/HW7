@@ -11,9 +11,9 @@ type PropsType = {
 
 export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
   const sidebarClass = s.sidebar + (open ? " " + s.open : "");
+
   return (
     <>
-      {/* Затемнение справа от открытого меню */}
       {open && <div className={s.background} onClick={handleClose} />}
 
       <aside className={sidebarClass}>
@@ -32,6 +32,7 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
           >
             Pre-junior
           </NavLink>
+
           <NavLink
             id={"hw5-junior-link"}
             to={PATH.JUNIOR}
@@ -42,6 +43,7 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
           >
             Junior
           </NavLink>
+
           <NavLink
             id={"hw5-junior-plus-link"}
             to={PATH.JUNIOR_PLUS}
@@ -51,6 +53,18 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
             }
           >
             Junior Plus
+          </NavLink>
+
+          {/* ✅ Новый пункт меню для HW7 */}
+          <NavLink
+            id={"hw7-link"}
+            to={PATH.HW7}
+            onClick={handleClose}
+            className={({ isActive }) =>
+              s.link + (isActive ? " " + s.active : "")
+            }
+          >
+            Homework #7
           </NavLink>
         </nav>
       </aside>
