@@ -29,7 +29,7 @@ type SuperRadioPropsType = Omit<DefaultRadioPropsType, "type"> & {
 };
 
 const SuperRadio: React.FC<SuperRadioPropsType> = ({
-  id,
+  id = "hw7-super-radio", // <- Добавлено значение по умолчанию
   name,
   className,
   options = [],
@@ -43,7 +43,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
       (o) => o.id.toString() === e.target.value
     );
     if (selectedOption) {
-      onChangeOption?.(selectedOption); // Упрощаем вызов с optional chaining
+      onChangeOption?.(selectedOption);
     }
   };
 
@@ -52,10 +52,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 
   const mappedOptions = options.map((o) => (
     <label key={o.id} className={s.label}>
-      {" "}
-      {/* Используем id вместо name */}
       <input
-        id={`${id}-input-${o.id}`}
+        id={`${id}-input-${o.id}`} // Будет #hw7-super-radio-input-1 и т.д.
         className={finalRadioClassName}
         type="radio"
         name={name}
@@ -64,7 +62,11 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
         onChange={onChangeCallback}
         {...restProps}
       />
-      <span id={`${id}-span-${o.id}`} {...spanProps} className={spanClassName}>
+      <span
+        id={`${id}-span-${o.id}`} // Будет #hw7-super-radio-span-1 и т.д.
+        {...spanProps}
+        className={spanClassName}
+      >
         {o.value}
       </span>
     </label>
