@@ -23,7 +23,7 @@ export const Header: FC<PropsType> = ({ handleOpen }) => {
 
   return (
     <div id={'hw5-header'} className={s.header}>
-      {/* ЭТО ВАЖНО!!! ID должен быть именно hw5-burger-menu */}
+       ЭТО ВАЖНО!!! ID должен быть именно hw5-burger-menu 
       <img
         src={burgerIcon}
         id={'hw5-burger-menu'} // <-- чтобы Cypress нашёл
