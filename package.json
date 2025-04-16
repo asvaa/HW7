@@ -1,7 +1,7 @@
 {
   "name": "hws2",
   "version": "0.1.0",
- "homepage": "https://asvaa.github.io/hw7",
+  "homepage": "https://asvaa.github.io/hw7",
   "private": true,
   "dependencies": {
     "@emotion/react": "11.10.4",
@@ -53,8 +53,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.3.20",
-    "@types/react-dom": "^18.3.6",
-    "cypress": "^14.3.0"
+    "@types/react-dom": "^18.3.6"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.io/facebook/create-react-app).",
   "main": "index.js",

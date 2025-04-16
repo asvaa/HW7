@@ -5,7 +5,7 @@ import s2 from "../../s1-main/App.module.css";
 import s from "./HW7.module.css";
 
 type OptionType = {
-  id: number;
+  id: string | number;
   value: string;
 };
 

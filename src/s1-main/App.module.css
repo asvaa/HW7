@@ -1,4 +1,4 @@
-.App {
+/* .App {
     --header_height: 60px;
 }
 
@@ -8,4 +8,30 @@
 
 .hwTitle {
 
-}
+} */
+ /* Использование CSS-переменных */
+.App {
+    --header-height: 60px; /* Переменная для высоты хедера */
+  }
+  
+  .hw {
+    padding-top: var(--header-height); /* Используем переменную для отступа */
+  }
+  
+  .hwTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Пример адаптивности */
+  @media (max-width: 768px) {
+    .hw {
+      padding-top: 50px; /* Если ширина экрана меньше 768px, уменьшаем отступ сверху */
+    }
+  
+    .hwTitle {
+      font-size: 20px; /* Уменьшаем размер шрифта для мобильных */
+    }
+  }
+  

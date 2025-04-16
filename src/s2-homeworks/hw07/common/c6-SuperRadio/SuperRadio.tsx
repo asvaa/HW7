@@ -2,7 +2,7 @@ import React, { ChangeEvent } from "react";
 import s from "./SuperRadio.module.css";
 
 type OptionType = {
-  id: number;
+  id: string | number;
   value: string;
 };
 
@@ -44,7 +44,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
           />
           <span id={`${id}-span-${o.id}`}>
             {" "}
-            {o.value}
+            {o.id}
           </span>
         </label>
       ))}

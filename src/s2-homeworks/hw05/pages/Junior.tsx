@@ -1,5 +1,5 @@
 import React from "react";
-// import HW5 from "../HW5";
+ import HW5 from "../HW5";
 import HW6 from "../../hw06/HW6";
 import HW7 from "../../hw07/HW7";
 
@@ -9,7 +9,7 @@ import HW7 from "../../hw07/HW7";
 function Junior() {
   return (
     <div id={"hw5-page-junior"}>
-      {/* <HW5 /> */}
+       <HW5 /> 
       <HW6 />
       <HW7 />
       {/*<HW8 />*/}
