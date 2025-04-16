@@ -34,6 +34,7 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
         <nav className={s.nav}>
           <NavLink
             to={PATH.PRE_JUNIOR}
+            id="hw5-pre-junior-link" // ✅ добавлен id
             onClick={handleClose}
             className={({ isActive }) => (isActive ? s.active : "")}
             data-testid="pre-junior-link"
@@ -43,6 +44,7 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
 
           <NavLink
             to={PATH.JUNIOR}
+            id="hw5-junior-link" // ✅ нужный id для Cypress
             onClick={handleClose}
             className={({ isActive }) => (isActive ? s.active : "")}
             data-testid="junior-link"
@@ -52,6 +54,7 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
 
           <NavLink
             to={PATH.JUNIOR_PLUS}
+            id="hw5-junior-plus-link" // ✅ тоже можно добавить
             onClick={handleClose}
             className={({ isActive }) => (isActive ? s.active : "")}
             data-testid="junior-plus-link"
